@@ -1,0 +1,224 @@
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fffdf7; /* Fundo creme bem suave */
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho (Header) */
+header {
+    background: linear-gradient(135deg, #ff8c00, #ffa500); /* Gradiente laranja cítrico */
+    color: #ffffff;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+header nav button {
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+header nav button:hover {
+    background-color: #f4fbe8;
+    transform: translateY(-2px);
+}
+
+header nav button a {
+    text-decoration: none;
+    color: #e67e00;
+    font-size: 0.95rem;
+}
+
+/* Conteúdo Principal (Main) */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Seção da Imagem */
+main section:first-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+main section:first-child img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+}
+
+/* Seção do Formulário */
+main section:last-child {
+    flex: 1;
+    max-width: 450px;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-top: 6px solid #7cb342; /* Detalhe verde-limão no topo */
+}
+
+main section:last-child h2 {
+    color: #e67e00;
+    margin-bottom: 24px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/* Formulário e Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+}
+
+form input {
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border: 1.5px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.15);
+}
+
+/* Botão Entrar */
+form button[type="submit"] {
+    background-color: #7cb342; /* Verde folha cítrica */
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #689f38;
+}
+
+form button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Links inferiores do formulário */
+form p {
+    text-align: center;
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+    color: #666666;
+}
+
+form p a {
+    color: #e67e00;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé (Footer) */
+footer {
+    background-color: #2e3b23; /* Verde escuro elegante */
+    color: #f1f8e9;
+    text-align: center;
+    padding: 18px 5%;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Tablets e Celulares)
+   ========================================= */
+@media (max-width: 850px) {
+    main {
+        flex-direction: column;
+        padding: 30px 5%;
+        gap: 25px;
+    }
+
+    main section:first-child img {
+        max-height: 240px;
+    }
+
+    main section:last-child {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 18px 4%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav button {
+        width: 100%;
+    }
+
+    main section:first-child img {
+        max-height: 180px;
+    }
+
+    main section:last-child h2 {
+        font-size: 1.4rem;
+    }
+}

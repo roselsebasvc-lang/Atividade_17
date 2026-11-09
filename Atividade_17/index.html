@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas Cítricas Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="titulo-01">
+        Frutas frescas todos os dias • Entrega rápida • Qualidade garantida
+    </header>
+
+    <nav class="navbar">
+
+        <!-- Botão do Menu Hambúrguer (Aparece apenas nas telas Mobile) -->
+        <button class="hamburger" id="menu-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="logo">
+            🍋 Cítricas Fruits
+        </div>
+
+        <!-- Lista de opções controlada pelo menu hambúrguer -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <!-- BLOCO DE BOTÕES ATUALIZADO (Responsivo) -->
+        <div class="menu-buttons">
+            <!-- Botões tradicionais visíveis apenas no computador -->
+            <a href="./PAGES/login/login.html" class="btn btn-login desktop-only">
+                Login
+            </a>
+            <a href="./PAGES/cadastro/cadastro.html" class="btn btn-cadastro desktop-only">
+                Cadastre-se
+            </a>
+
+            <!-- Novo botão de Carrinho visível apenas no mobile -->
+            <a href="#carrinho" class="btn-carrinho-mobile">
+                <span class="icon-cart">🛒</span>
+                <span>Carrinho</span>
+            </a>
+        </div>
+
+    </nav>
+
+    <!-- SEÇÃO HERO: Fundo retangular no PC / Empilhado de forma limpa no Mobile -->
+    <section class="hero" id="inicio">
+        
+        <!-- Elemento usado para imagem/overlay de forma responsiva -->
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Frutas Cítricas Premium</h1>
+            <p>
+                Ricas em vitamina C, antioxidantes e sabor.
+                Escolha frutas selecionadas diretamente dos melhores produtores.
+            </p>
+            <a href="#produtos" class="cta-button">
+                Comprar Agora
+            </a>
+        </div>
+
+    </section>
+
+    <section class="beneficios" id="beneficios">
+        <div class="beneficio">
+            <span>💪</span>
+            <h3>Mais Imunidade</h3>
+            <p>Alta concentração de vitamina C.</p>
+        </div>
+        <div class="beneficio">
+            <span>🌱</span>
+            <h3>100% Natural</h3>
+            <p>Frutas selecionadas diariamente.</p>
+        </div>
+        <div class="beneficio">
+            <span>❤️</span>
+            <h3>Saúde</h3>
+            <p>Fontes naturais de antioxidantes.</p>
+        </div>
+        <div class="beneficio">
+            <span>🚚</span>
+            <h3>Entrega Rápida</h3>
+            <p>Receba em casa com segurança.</p>
+        </div>
+    </section>
+
+    <section class="produtos" id="produtos">
+        <h2>Nossas Frutas</h2>
+        <div class="grid-produtos">
+            <article class="card">
+                <img src="./IMAGENS/Kiwi.jpg" alt="Kiwi">
+                <div class="card-content">
+                    <h3>Kiwi Fresco</h3>
+                    <p>Doce e levemente azedo.</p>
+                    <span class="preco">R$ 12,99 / kg</span>
+                    <button>Comprar</button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="./IMAGENS/Laranja.jpg" alt="Laranja">
+                <div class="card-content">
+                    <h3>Laranja</h3>
+                    <p>Ideal para sucos naturais.</p>
+                    <span class="preco">R$ 5,49 / kg</span>
+                    <button>Comprar</button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="./IMAGENS/Tangerina.jpg" alt="Tangerina">
+                <div class="card-content">
+                    <h3>Tangerina</h3>
+                    <p>Doce e muito suculenta.</p>
+                    <span class="preco">R$ 7,99 / kg</span>
+                    <button>Comprar</button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="./IMAGENS/Abacaxi.jpg" alt="Abacaxi">
+                <div class="card-content">
+                    <h3>Abacaxi</h3>
+                    <p>Sabor tropical refrescante.</p>
+                    <span class="preco">R$ 6,50 / unidade</span>
+                    <button>Comprar</button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="./IMAGENS/Limão.jpg" alt="Limão">
+                <div class="card-content">
+                    <h3>Limão Taiti</h3>
+                    <p>Perfeito para receitas e bebidas.</p>
+                    <span class="preco">R$ 4,99 / kg</span>
+                    <button>Comprar</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Leve mais saúde para sua casa</h2>
+        <p>Frutas frescas, selecionadas e entregues com qualidade.</p>
+        <button>Fazer Pedido</button>
+    </section>
+
+    <footer id="contato">
+        <p>© 2026 Frutas Cítricas Premium - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE INTERAÇÃO DO MENU MOBILE -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        // Abre e fecha o menu lateral ao clicar no botão hambúrguer
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Fecha o menu automaticamente quando o usuário clica em uma das opções
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>

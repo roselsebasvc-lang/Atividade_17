@@ -1,0 +1,533 @@
+:root {
+    --verde-escuro: #2E7D32;
+    --verde: #43A047;
+    --verde-claro: #D0C8B1;
+    --verde-claro-01: #E8F5E9;
+
+    --laranja: #FF7A00;
+    --laranja-claro: #FFF3E0;
+
+    --cinza: #f8faf8;
+    --texto: #333;
+    --branco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--cinza);
+    color: var(--texto);
+}
+
+/* TOPO ANÚNCIO */
+
+.titulo-01 {
+    background: var(--verde);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: 500;
+}
+
+/* MENU / NAVBAR DE DESKTOP (PC) */
+
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    order: 2; /* Move o logotipo para o meio no PC */
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+}
+
+.navbar ul.nav-links {
+    order: 1; /* Move a lista de opções para a esquerda no PC */
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar ul.nav-links a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.navbar ul.nav-links a:hover {
+    color: var(--laranja);
+}
+
+.menu-buttons {
+    order: 3; /* Mantém os botões na extrema direita */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* BOTÕES GERAIS */
+
+.btn {
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.btn-login {
+    border: 2px solid var(--verde-escuro);
+    color: var(--verde-escuro);
+}
+
+.btn-login:hover {
+    background: var(--verde-escuro);
+    color: white;
+}
+
+.btn-cadastro {
+    background: var(--laranja);
+    color: white;
+}
+
+.btn-cadastro:hover {
+    background: #e56e00;
+}
+
+/* BOTÃO CARRINHO MOBILE (Oculto no PC por padrão) */
+
+.btn-carrinho-mobile {
+    display: none; /* Só aparece no bloco mobile lá embaixo */
+    text-decoration: none;
+    background-color: var(--laranja);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 122, 0, 0.2);
+}
+
+.btn-carrinho-mobile:hover {
+    background-color: #e56e00;
+}
+
+.icon-cart {
+    font-size: 1.1rem;
+}
+
+/* BOTÃO HAMBÚRGUER (Escondido no PC por padrão) */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--verde-escuro);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Animação para transformar o Hambúrguer em "X" quando aberto */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* HERO (PC - Imagem de fundo retangular centralizada) */
+
+.hero {
+    min-height: 70vh;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 24px;
+    padding: 60px 8%;
+    background-image: url('./IMAGENS/Frutas\ citricas.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 45%, rgba(255, 255, 255, 0.1) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    color: var(--verde-escuro);
+    margin-bottom: 20px;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    color: #222;
+    font-weight: 500;
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--laranja);
+    color: white;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 40px;
+    transition: .3s;
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--verde-escuro);
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    transform: translateY(-2px);
+}
+
+/* BENEFÍCIOS */
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 80px 8%;
+    background: white;
+}
+
+.beneficio {
+    text-align: center;
+    background: #f8fff8;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .05);
+}
+
+.beneficio span {
+    font-size: 3rem;
+}
+
+.beneficio h3 {
+    margin: 15px 0;
+    color: var(--verde-escuro);
+}
+
+/* PRODUTOS */
+
+.produtos {
+    padding: 90px 8%;
+}
+
+.produtos h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--verde-escuro);
+    margin-bottom: 50px;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+.preco {
+    display: block;
+    color: var(--laranja);
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 15px 0;
+}
+
+.card button {
+    border: none;
+    background: var(--laranja);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card button:hover {
+    background: var(--verde-escuro);
+}
+
+/* CTA FINAL */
+
+.cta {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, var(--verde-escuro), var(--laranja));
+    color: white;
+}
+
+.cta h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.cta button {
+    background: white;
+    color: var(--laranja);
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ==========================================
+   RESPONSIVO / COMPORTAMENTO EM DISPOSITIVOS MÓVEIS
+   ========================================== */
+
+@media (max-width: 992px) {
+    .hero {
+        margin: 20px;
+        padding: 50px 6%;
+        justify-content: center;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-overlay {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* CONFIGURAÇÃO PARA TELAS MENORES (TABLET E MOBILE) */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex; /* Ativa o ícone de 3 linhas */
+        order: 1; 
+        margin-right: 12px;
+        flex-shrink: 0;
+    }
+
+    .logo {
+        order: 2;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-right: auto;
+    }
+
+    .menu-buttons {
+        order: 3;
+        display: flex;
+        align-items: center;
+    }
+
+    /* 📲 MODIFICAÇÃO EXCLUSIVA PARA VISIBILIDADE MOBILE */
+    .desktop-only {
+        display: none !important; /* Esconde Login e Cadastro */
+    }
+
+    .btn-carrinho-mobile {
+        display: flex; /* Torna o botão de carrinho visível no mobile */
+    }
+
+    /* Menu lateral suspenso (dropdown) */
+    .navbar ul.nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        padding: 0 20px;
+        gap: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    .navbar ul.nav-links.active {
+        padding: 20px;
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .navbar ul.nav-links li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar ul.nav-links li a {
+        display: block;
+        padding: 12px 0;
+        font-size: 1.1rem;
+    }
+}
+
+/* COMPACTAÇÃO COMPLEMENTAR PARA SMARTPHONES PEQUENOS (Até 380px) */
+@media (max-width: 380px) {
+    .navbar {
+        padding: 15px 12px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .btn-carrinho-mobile {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* HERO EM MOBILE: Transforma o bloco em empilhado (Foto no topo, texto abaixo) */
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+        margin: 15px;
+        padding: 0;
+        background: var(--branco);
+    }
+
+    .hero-overlay {
+        position: relative;
+        height: 160px;
+        width: 100%;
+        background: url('./IMAGENS/Frutas\ citricas.jpg') center/cover no-repeat;
+    }
+
+    .hero-content {
+        padding: 25px 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+        margin-bottom: 12px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+    }
+

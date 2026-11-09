@@ -1,0 +1,259 @@
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fffdf7;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Barra Superior (Top Bar) */
+.top-bar {
+    background-color: #2e3b23;
+    color: #f1f8e9;
+    text-align: center;
+    padding: 8px 5%;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Barra de Navegação (Navbar) */
+.navbar {
+    background: linear-gradient(135deg, #ff8c00, #ffa500);
+    color: #ffffff;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #e67e00;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+}
+
+.navbar ul li a:hover {
+    background-color: #f4fbe8;
+    transform: translateY(-2px);
+}
+
+/* Container Principal do Cadastro */
+.cadastro-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
+}
+
+/* Cartão do Formulário */
+.formulario-card {
+    width: 100%;
+    max-width: 650px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-top: 6px solid #7cb342;
+}
+
+.formulario-card h1 {
+    color: #e67e00;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.formulario-card .subtitulo {
+    color: #555555;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.4;
+}
+
+/* Estrutura dos Campos e Colunas */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.duas-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #4a4a4a;
+    font-size: 0.92rem;
+}
+
+.campo input {
+    padding: 12px 14px;
+    border: 1.5px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 0.98rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.15);
+}
+
+/* Botões do Formulário */
+.botoes-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-cadastrar,
+.btn-limpar {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-cadastrar {
+    background-color: #7cb342;
+    color: #ffffff;
+}
+
+.btn-cadastrar:hover {
+    background-color: #689f38;
+}
+
+.btn-limpar {
+    background-color: #f0f0f0;
+    color: #555555;
+    border: 1px solid #d5d5d5;
+}
+
+.btn-limpar:hover {
+    background-color: #e2e2e2;
+}
+
+.btn-cadastrar:active,
+.btn-limpar:active {
+    transform: scale(0.98);
+}
+
+/* Link para Login no rodapé do cartão */
+.login-link {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #eeeeee;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: #666666;
+}
+
+.login-link a {
+    color: #e67e00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé (Footer) */
+footer {
+    background-color: #2e3b23;
+    color: #f1f8e9;
+    text-align: center;
+    padding: 18px 5%;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Tablets e Celulares)
+   ========================================= */
+@media (max-width: 650px) {
+    .formulario-card {
+        padding: 25px 20px;
+    }
+
+    .duas-colunas {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .botoes-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .navbar ul {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .formulario-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .login-link {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
